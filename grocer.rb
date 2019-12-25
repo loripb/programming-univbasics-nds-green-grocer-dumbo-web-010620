@@ -89,7 +89,9 @@ end
 def find_cart_total(cart)
   total = 0
   cart.each do |item|
-    #item[:price] *= item[:count]
+    if item[:count] < 1
+      item[:price] *= item[:count]
+    end
     total += item[:price]
   end
   total
