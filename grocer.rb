@@ -24,7 +24,7 @@ def consolidate_cart(cart)
   cart.each do |item|
     item_name  = item[:item]
     item_check = find_item_by_name_in_collection(item_name, uniq_cart)
-    
+
     if item != item_check
       item[:count] = 1
       uniq_cart << item
