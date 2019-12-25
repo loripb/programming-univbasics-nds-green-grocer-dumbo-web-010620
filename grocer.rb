@@ -113,7 +113,7 @@ def checkout(cart, coupons)
   cart = consolidate_cart(cart)
   cart = apply_coupons(cart, coupons)
   cart = apply_clearance(cart)
-
+  p cart
   total = find_cart_total(cart)
   if total > 100
     puts 'hey'
