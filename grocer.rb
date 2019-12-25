@@ -3,7 +3,7 @@ def find_item_by_name_in_collection(name, collection)
   #
   # Consult README for inputs and outputs
   result = nil
-  i = 0
+  i      = 0
 
   while i < collection.length
     if collection[i][:item] == name
@@ -22,8 +22,9 @@ def consolidate_cart(cart)
   uniq_cart = []
 
   cart.each do |item|
-    item_name = item[:item]
+    item_name  = item[:item]
     item_check = find_item_by_name_in_collection(item_name, uniq_cart)
+    
     if item != item_check
       item[:count] = 1
       uniq_cart << item
@@ -74,8 +75,7 @@ def apply_clearance(cart)
 
   cart.each do |item|
     if item[:clearance] == true
-      discount = 0.2 * item[:price]
-
+      discount      = 0.2 * item[:price]
       item[:price] -= discount
     end
   end
@@ -86,14 +86,14 @@ def find_cart_total(cart)
   total = 0
   cart.each do |item|
     item[:price] *= item[:count]
-    total += item[:price]
+    total        += item[:price]
   end
   total
 end
 
 def apply_10_percent(total)
   discount = 0.1 * total
-  total -= discount
+  total   -= discount
 end
 
 def checkout(cart, coupons)
@@ -107,9 +107,9 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
 
-  cart = consolidate_cart(cart)
-  cart = apply_coupons(cart, coupons)
-  cart = apply_clearance(cart)
+  cart  = consolidate_cart(cart)
+  cart  = apply_coupons(cart, coupons)
+  cart  = apply_clearance(cart)
   total = find_cart_total(cart)
 
   if total > 100
