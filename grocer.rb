@@ -93,6 +93,12 @@ def find_cart_total(cart)
   total
 end
 
+def ten_percent_discount(cart)
+  discount = 0.1 * item[:price]
+
+  item[:price] = item[:price] - discount
+end
+
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
   #
