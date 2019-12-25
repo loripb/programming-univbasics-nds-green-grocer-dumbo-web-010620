@@ -42,8 +42,6 @@ def create_coupon_hash(coupon, discounted_item)
   result[:clearance] = discounted_item[:clearance]
   result[:count]     = coupon[:num]
 
-  puts result[:price]
-
   result
 end
 
