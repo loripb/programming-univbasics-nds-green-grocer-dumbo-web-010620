@@ -77,7 +77,7 @@ def apply_clearance(cart)
       discount = 0.2 * item[:price]
 
       item[:price] = item[:price] - discount
-    else
+    elif find_cart_total(cart) > 100
       discount = 0.1 * item[:price]
 
       item[:price] = item[:price] - discount
