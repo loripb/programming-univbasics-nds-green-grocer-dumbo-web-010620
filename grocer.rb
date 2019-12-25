@@ -118,4 +118,6 @@ def checkout(cart, coupons)
   if total > 100
     puts 'hey'
   end
+
+  total
 end
