@@ -85,7 +85,7 @@ end
 def find_cart_total(cart)
   total = 0
   cart.each do |item|
-    if item[:count] > 1
+    if !item[:item].include? ' W/COUPON'
       item[:price] *= item[:count]
     end
     total += item[:price]
