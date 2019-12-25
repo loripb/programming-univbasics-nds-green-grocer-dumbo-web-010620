@@ -108,7 +108,7 @@ def checkout(cart, coupons)
   p cart
   total = find_cart_total(cart)
   if total > 100
-    total = 1.0 * total
+    total = 0.1 * total
   end
 
   total
