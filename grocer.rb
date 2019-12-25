@@ -114,5 +114,7 @@ def checkout(cart, coupons)
 
   if total > 100
     total = apply_10_percent(total)
+  else
+    total
   end
 end
