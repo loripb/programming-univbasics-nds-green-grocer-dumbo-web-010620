@@ -92,9 +92,12 @@ def find_cart_total(cart)
 end
 
 def ten_percent_discount(cart)
-  discount = 0.1 * item[:price]
+  cart.each do |item|
+    discount = 0.1 * item[:price]
 
-  item[:price] = item[:price] - discount
+    item[:price] = item[:price] - discount
+  end
+  cart
 end
 
 def checkout(cart, coupons)
