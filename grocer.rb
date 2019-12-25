@@ -114,7 +114,7 @@ def checkout(cart, coupons)
   p cart
   total = find_cart_total(cart)
   if total > 100
-    puts 'hey'
+    total = ten_percent_discount(cart)
   end
 
   total
