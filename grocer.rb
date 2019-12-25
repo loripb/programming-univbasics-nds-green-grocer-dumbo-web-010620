@@ -76,7 +76,7 @@ def apply_clearance(cart)
     if item[:clearance] == true
       discount = 0.2 * item[:price]
 
-      item[:price] = item[:price] - discount
+      item[:price] -= discount
     end
   end
   cart
@@ -95,7 +95,7 @@ def ten_percent_discount(cart)
   cart.each do |item|
     discount = 0.1 * item[:price]
 
-    item[:price] = item[:price] - discount
+    item[:price] -= discount
   end
   cart
 end
