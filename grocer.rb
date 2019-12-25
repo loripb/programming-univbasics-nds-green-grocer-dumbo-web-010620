@@ -38,7 +38,7 @@ def create_coupon_hash(coupon, discounted_item)
   result = {}
 
   result[:item]      = coupon[:item] + ' W/COUPON'
-  result[:price]     = coupon[:cost]
+  result[:price]     = coupon[:cost] / discounted_item[:price]
   result[:clearance] = discounted_item[:clearance]
   result[:count]     = coupon[:num]
 
